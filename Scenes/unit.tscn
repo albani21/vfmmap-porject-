@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bju2jqmppdttm"]
+
+[ext_resource type="Script" uid="uid://ycmhhxmf7q2b" path="res://Scenes/unit.gd" id="1_yjw0f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myidr"]
+albedo_color = Color(1, 0.14388546, 0.7856618, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bdboo"]
+material = SubResource("StandardMaterial3D_myidr")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_myidr"]
+
+[node name="Unit" type="CharacterBody3D" unique_id=1279977071]
+script = ExtResource("1_yjw0f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1842222805]
+mesh = SubResource("CapsuleMesh_bdboo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=357588856]
+shape = SubResource("CapsuleShape3D_myidr")

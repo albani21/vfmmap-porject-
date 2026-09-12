@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://coar0w52ewb50"]
+
+[ext_resource type="Script" uid="uid://qmqvxrsnvvvf" path="res://Scenes/world.gd" id="1_5a7ea"]
+[ext_resource type="Script" uid="uid://cp4m4k134w5rs" path="res://addons/VectorFieldNavigation/classes/VFNMap.gd" id="2_8j60k"]
+[ext_resource type="Texture2D" uid="uid://c51attf15oegq" path="res://heightMap/protoMapHeightMap.png" id="3_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://nlgqiy4h8hul" path="res://3dmapModel/protomap.gltf" id="4_8j60k"]
+[ext_resource type="PackedScene" uid="uid://bju2jqmppdttm" path="res://Scenes/unit.tscn" id="5_fo5ed"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5ukr8"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_o06y3"]
+sky_material = SubResource("ProceduralSkyMaterial_5ukr8")
+
+[sub_resource type="Environment" id="Environment_k7acu"]
+background_mode = 2
+sky = SubResource("Sky_o06y3")
+glow_enabled = true
+
+[node name="world" type="Node3D" unique_id=1128633026]
+script = ExtResource("1_5a7ea")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1760144692]
+environment = SubResource("Environment_k7acu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=403540775]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="VectorMap" type="Node3D" parent="." unique_id=2088696980]
+script = ExtResource("2_8j60k")
+field_scale = 0.76
+height_scale = 22.06
+heightmap = ExtResource("3_fo5ed")
+metadata/_custom_type_script = "uid://cp4m4k134w5rs"
+
+[node name="Node3D" parent="." unique_id=1267954371 instance=ExtResource("4_8j60k")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2037327155]
+transform = Transform3D(1, 0, 0, 0, 0.52568704, 0.850678, 0, -0.850678, 0.52568704, 0, 47.686142, 44.140995)
+
+[node name="Unit" parent="." unique_id=1279977071 instance=ExtResource("5_fo5ed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5532427, 0)
