@@ -19,7 +19,7 @@ func _ready() -> void:
 	field = vfn_map.create_field()
 
 	# Target
-	var target_position := Vector3(0, 5, 0)
+	var target_position := Vector3(4, 13, 0)
 	field.add_target_from_world(target_position)
 
 	# Terrain climbing
@@ -41,6 +41,7 @@ func _field_finished(success: bool) -> void:
 
 	print("VFN ready!")
 
-	for unit in get_tree().get_nodes_in_group("units"):
-		unit.field = field
-		print("Field assigned to: ", unit.name)
+	var unit = $Unit
+	unit.field = field
+
+	print("Field assigned to: ", unit.name)
