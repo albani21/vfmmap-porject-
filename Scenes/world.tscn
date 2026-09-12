@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://qmqvxrsnvvvf" path="res://Scenes/world.gd" id="1_5a7ea"]
 [ext_resource type="Script" uid="uid://cp4m4k134w5rs" path="res://addons/VectorFieldNavigation/classes/VFNMap.gd" id="2_8j60k"]
-[ext_resource type="Texture2D" uid="uid://c51attf15oegq" path="res://heightMap/protoMapHeightMap.png" id="3_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://nlgqiy4h8hul" path="res://3dmapModel/protomap.gltf" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://bju2jqmppdttm" path="res://Scenes/unit.tscn" id="5_fo5ed"]
 
@@ -32,13 +31,12 @@ shadow_enabled = true
 script = ExtResource("2_8j60k")
 field_scale = 0.76
 height_scale = 22.06
-heightmap = ExtResource("3_fo5ed")
 metadata/_custom_type_script = "uid://cp4m4k134w5rs"
 
 [node name="Node3D" parent="." unique_id=1267954371 instance=ExtResource("4_8j60k")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2037327155]
-transform = Transform3D(1, 0, 0, 0, 0.52568704, 0.850678, 0, -0.850678, 0.52568704, 0, 47.686142, 44.140995)
+transform = Transform3D(1, 0, 0, 0, 0.5256871, 0.8506781, 0, -0.8506781, 0.5256871, 0, 5.6588173, 4.324276)
 
 [node name="Unit" parent="." unique_id=1279977071 instance=ExtResource("5_fo5ed")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5532427, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5532426, 0.1)
